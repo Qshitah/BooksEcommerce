@@ -1,0 +1,153 @@
+<div class="intro-section pt-lg-2">
+  <div class="container">
+    <div class="row">
+      @for (banner of banners.slice(0,2); track $index) {
+      <div
+        [className]="$index === 0 ? 'col-md-12 col-lg-6' : 'col-sm-6 col-lg-3'"
+      >
+        <div class="banner banner-big banner-overlay">
+          <a [href]="banner.link">
+            <img [src]="banner.imageUrl" alt="Banner" />
+          </a>
+
+          <div class="banner-content">
+            <h4 class="banner-subtitle text-white">
+              <a [href]="banner.link">{{ banner.subtitle }}</a>
+            </h4>
+            <!-- End .banner-subtitle -->
+            <h2 class="banner-title text-white">
+              <a [href]="banner.link">{{ banner.title }}</a>
+            </h2>
+            <!-- End .banner-title -->
+            <a [href]="banner.link" class="btn btn-outline-white-3 banner-link"
+              >{{ banner.buttonTitle }}<i class="icon-long-arrow-right"></i
+            ></a>
+          </div>
+          <!-- End .banner-content -->
+        </div>
+        <!-- End .banner -->
+      </div>
+      }
+      <div class="col-sm-6 col-lg-3">
+        @for (banner of banners.slice(2,4); track $index) {
+        <div class="banner banner-small banner-overlay">
+          <a [href]="banner.link">
+            <img [src]="banner.imageUrl" alt="Banner" />
+          </a>
+
+          <div class="banner-content">
+            <h4 class="banner-subtitle text-white d-lg-none d-xl-block">
+              <a [href]="banner.link">{{ banner.subtitle }}</a>
+            </h4>
+            <!-- End .banner-subtitle -->
+            <h3 class="banner-title text-white">
+              <a [href]="banner.link">{{ banner.title }}</a>
+            </h3>
+            <!-- End .banner-title -->
+            <a [href]="banner.link" class="btn btn-outline-white-3 banner-link"
+              >{{ banner.buttonTitle }}<i class="icon-long-arrow-right"></i
+            ></a>
+          </div>
+          <!-- End .banner-content -->
+        </div>
+        <!-- End .banner -->
+        }
+      </div>
+    </div>
+    <!-- End .row -->
+  </div>
+  <!-- End .container -->
+
+  <div class="icon-boxes-container bg-transparent">
+    <div class="container">
+      <div class="row">
+        @for (iconBox of iconBoxes; track $index) {
+        <div class="col-sm-6 col-lg-3">
+          <div class="icon-box icon-box-side">
+            <span class="icon-box-icon">
+              <i [class]="iconBox.icon"></i>
+            </span>
+            <div class="icon-box-content">
+              <h3 class="icon-box-title">{{ iconBox.title }}</h3>
+              <!-- End .icon-box-title -->
+              <p>{{ iconBox.description }}</p>
+            </div>
+            <!-- End .icon-box-content -->
+          </div>
+          <!-- End .icon-box -->
+        </div>
+        <!-- End .col-sm-6 col-lg-3 -->
+        }
+      </div>
+      <!-- End .row -->
+    </div>
+    <!-- End .container -->
+  </div>
+  <!-- End .icon-boxes-container -->
+
+  <app-slide [title]="'Best Sellers'" [products]="products" />
+
+  <app-slide [title]="'New Release'" [products]="products" />
+
+  <div class="mb-5"></div>
+  <!-- End .mb-3 -->
+
+  <div class="banner-group mb-2">
+    <div class="container">
+      <div class="row justify-content-center">
+        @for (banner of banners.slice(1,5); track $index) {
+          <div class="col-md-6 col-lg-4">
+            <div class="banner banner-overlay">
+              <a [href]="banner.link">
+                <img
+                  [src]="banner.imageUrl"
+                  alt="Banner"
+                  [style]="{'height':'250px'}"
+                />
+              </a>
+
+              <div class="banner-content">
+                <h4 class="banner-subtitle text-white">
+                  <a [href]="banner.link">{{ banner.subtitle }}</a>
+                </h4>
+                <!-- End .banner-subtitle -->
+                <h3 class="banner-title text-white">
+                  <a [href]="banner.link">{{ banner.title }}</a>
+                </h3>
+                <!-- End .banner-title -->
+                <a [href]="banner.link" class="btn btn-outline-white-3 banner-link"
+                  >{{ banner.buttonTitle }}<i class="icon-long-arrow-right"></i
+                ></a>
+              </div>
+              <!-- End .banner-content -->
+            </div>
+            <!-- End .banner -->
+          </div>
+        }
+      </div>
+      <!-- End .row -->
+    </div>
+    <!-- End .container -->
+  </div>
+  <!-- End .banner-group -->
+
+  <div class="mb-5"></div><!-- End .mb-5 -->
+
+  <div class="cta-newsletter text-center pt-6 pb-7">
+    <div class="container">
+        <span class="cta-icon"><i class="icon-envelope"></i></span>
+        <h3 class="title">Subscribe for Our Newsletter</h3><!-- End .title -->
+        <p class="title-desc">Learn about new offers and get more deals by joining our newsletter</p><!-- End .title-desc -->
+
+        <form action="#">
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter your Email Address" aria-label="Email Adress" aria-describedby="newsletter-btn" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit" id="newsletter-btn"><span>SUBSCRIBE</span><i class="icon-long-arrow-right"></i></button>
+                </div><!-- .End .input-group-append -->
+            </div><!-- .End .input-group -->
+        </form>
+    </div><!-- End .container -->
+</div><!-- End .cta-newsletter -->
+</div>
+<!-- End .intro-section -->

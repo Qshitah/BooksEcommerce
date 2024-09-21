@@ -1,0 +1,108 @@
+<footer class="footer footer-2">
+  <div class="footer-middle">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6 col-xl-5">
+          <div class="widget widget-about">
+            <img
+              src="assets/images/icon.png"
+              class="footer-logo"
+              alt="Footer Logo"
+              width="105"
+              height="25"
+            />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+              inventore, voluptatum veniam minima odit officiis perferendis
+              consequatur pariatur deleniti sequi quidem sint corrupti. Nostrum,
+              dolor. Porro nulla perferendis aut aliquam.
+            </p>
+
+            <div class="widget-about-info">
+              <div class="row">
+                <div class="col-sm-6 col-md-4">
+                  <span class="widget-about-title"
+                    >Got Question? Call us 24/7</span
+                  >
+                  <a href="tel:123456789">+0123 456 789</a>
+                </div>
+                <!-- End .col-sm-6 -->
+                <div class="col-sm-6 col-md-8">
+                  <span class="widget-about-title">Payment Method</span>
+                  <figure class="footer-payments">
+                    <img
+                      src="assets/images/payments.png"
+                      alt="Payment methods"
+                      width="272"
+                      height="20"
+                    />
+                  </figure>
+                  <!-- End .footer-payments -->
+                </div>
+                <!-- End .col-sm-6 -->
+              </div>
+              <!-- End .row -->
+            </div>
+            <!-- End .widget-about-info -->
+          </div>
+          <!-- End .widget about-widget -->
+        </div>
+        <!-- End .col-sm-12 col-lg-3 -->
+
+        <div class="col-lg-6 col-xl-7">
+          <div class="row">
+            @for (widget of widgets; track $index) {
+              <div class="col-sm-4">
+                <div class="widget">
+                  <h4 class="widget-title">{{widget.title | uppercase}}</h4>
+                  <!-- End .widget-title -->
+
+                  @for (list of widget.list; track $index) {
+                    <ul class="widget-list">
+                      <li><a [routerLink]="list.link">{{list.title | titlecase}}</a></li>
+                    </ul>
+                    <!-- End .widget-list -->
+                  }
+                </div>
+                <!-- End .widget -->
+              </div>
+              <!-- End .col-sm-4 col-lg-3 -->
+            }
+
+          </div>
+          <!-- End .row -->
+        </div>
+        <!-- End .col-lg-6 col-xl-7 -->
+      </div>
+      <!-- End .row -->
+    </div>
+    <!-- End .container -->
+  </div>
+  <!-- End .footer-middle -->
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="footer-copyright">
+        Copyright © 2024 Web Crea Agency. All Rights Reserved.
+      </p>
+      <!-- End .footer-copyright -->
+
+      <div class="social-icons social-icons-color">
+        <span class="social-label">Social Media</span>
+        @for (social of socials; track $index) {
+          <a
+            [href]="social.link"
+            class="social-icon social-{{social.title | lowercase}}"
+            [title]="social.title"
+            target="_blank"
+            ><i class="{{social.icon}}"></i
+          ></a>
+        }
+      </div>
+      <!-- End .soial-icons -->
+    </div>
+    <!-- End .container -->
+  </div>
+  <!-- End .footer-bottom -->
+</footer>
+<!-- End .footer -->

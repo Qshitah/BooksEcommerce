@@ -1,0 +1,36 @@
+<div class="bestseller-products pt-5 pb-5 mb-5">
+  <div class="container">
+    <div class="heading heading-flex">
+      <div class="heading-left">
+        <h2 class="title">{{ title | titlecase }}</h2>
+      </div>
+      <div class="heading-right">
+        <a href="category.html" class="title-link"
+          >View more Products <i class="icon-long-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+
+    <owl-carousel-o [options]="customOptions" class="">
+      <ng-template carouselSlide *ngFor="let product of products">
+        <div class="product" [style]="{ height: '550px' }">
+          <span *ngIf="product.oldPrice" class="product-label label-sale">Sale</span>
+          <figure class="product-media">
+            <a [routerLink]="'product-detail/' + product.id">
+              <img [src]="product.image" [style]="{ height: '350px' }" alt="Product image" class="product-image"/>
+            </a>
+          </figure>
+          <div class="product-body">
+            <div class="product-cat">by <a href="#">{{ product.author }}</a></div>
+            <h3 class="product-title"><a [routerLink]="'product-detail/' + product.id">{{ product.title }}</a></h3>
+            <div class="product-price">
+              <span class="new-price">${{ product.price }}</span>
+              <span *ngIf="product.oldPrice" class="old-price">Was ${{ product.oldPrice }}</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+
+  </div>
+</div>
